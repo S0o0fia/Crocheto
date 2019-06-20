@@ -1,0 +1,99 @@
+
+
+<body>
+        <section id="page">
+            <div id="slide1">
+                             
+                    <img src="../../assets/Images/Logo/back2.jpg" width="100%" height="auto"/>
+                    
+    
+            </div>
+            <form [formGroup]="userForm" (submit)="onSubmit()" style="text-align: center" id="slide2">
+                            <h3> SignUp</h3>
+                            <!--FirstName-->
+                            <label>
+                                <p class="label-txt">First Name </p>
+                                <input type="text" class="input" [(ngModel)]="userservice.selecteduser.FirstName" name="FirstName"
+                                    ng-required="true"  formControlName="FirstName"/>
+                                <div class="line-box">
+                                    <div class="line">
+                                    </div>
+                                </div>
+                             </label>
+                    
+                            <!--LastName-->
+                            <label>
+                    
+                                <p class="label-txt"> Last Name</p>
+                                <input type="text" class="input" [(ngModel)]="userservice.selecteduser.LastName" name="LastName"
+                                    ng-required="true"  formControlName="LastName"/>
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </label>
+                            <!--Username-->
+                            <label>
+                                <p class="label-txt">Username</p>
+                                <input type="text" class="input" [(ngModel)]="userservice.selecteduser.Username" name="Username"
+                                    ng-required="true" formControlName="Username" />
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </label>
+                            <!--Email-->
+                            <label>
+                                <p class="label-txt">Email</p>
+                                <input type="email" class="input" [(ngModel)]="userservice.selecteduser.Email" name="Email"
+                                    ng-required="true" formControlName="Email" />
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </label>
+                            <!--Password-->
+                            <label>
+                                <p class="label-txt"> Password</p>
+                                <input type="password" class="input" [(ngModel)]="userservice.selecteduser.Password" name="Password"
+                                    ng-required="true" ng-minlength=6  formControlName="Password"/>
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </label>
+                            <!--Phone-->
+                            <label>
+                                <p class="label-txt"> Phone</p>
+                                <input type="text" class="input" [(ngModel)]="userservice.selecteduser.Phone" name="Phone"
+                                    ng-required="true" ng-minlength=11 ng-maxlength=11  formControlName="Phone"/>
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </label>
+                            <!--Address-->
+                            <label>
+                                <p class="label-txt">Address</p>
+                                <input type="text" class="input" [(ngModel)]="userservice.selecteduser.Address" name="Address"
+                                    ng-required="true" formControlName="Address" />
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </label>
+                            <button type="submit" [disabled]="!userForm.valid">Signup</button>
+                        </form>  
+               
+       </section> 
+    
+    <script>
+    $(document).ready(function () {
+    
+        $('.input').focus(function () {
+            $(this).parent().find(".label-txt").addClass('label-active');
+        });
+    
+        $(".input").focusout(function () {
+            if ($(this).val() == '') {
+                $(this).parent().find(".label-txt").removeClass('label-active');
+            };
+        });
+    
+    });
+    </script>
+    </body>
